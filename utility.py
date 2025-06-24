@@ -9,4 +9,4 @@ result = subprocess.run(
             stderr=subprocess.DEVNULL
         )
 
-print(result)
+print(result.returncode)
