@@ -17,9 +17,9 @@ pipeline {
             steps {
                 sh '''
                     fpm -s dir -t deb \
-                      -n $PACKAGE_NAME \
-                      -v $VERSION \
-                      hello.py=/usr/local/bin/$PACKAGE_NAME
+                      -n pingrequest \
+                      -v 1.0.0 \
+                      hello.py=/usr/local/bin/pingrequest
                 '''
             }
         }
