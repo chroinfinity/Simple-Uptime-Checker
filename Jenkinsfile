@@ -4,6 +4,7 @@ pipeline {
     environment {
         PACKAGE_NAME = "pingrequest"
         VERSION = "1.0.1"
+        ARTIFACT_NAME = "${env.PACKAGE_NAME}-${env.VERSION}-${env.BUILD_NUMBER}.deb"
     }
 
     stages {
