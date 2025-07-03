@@ -18,7 +18,7 @@ pipeline {
                 sh '''
                     fpm -s dir -t deb \
                       -n pingrequest \
-                      -v 1.0.0 \
+                      -v $VERSION \
                       utility.py=/usr/local/bin/pingrequest
                 '''
             }
