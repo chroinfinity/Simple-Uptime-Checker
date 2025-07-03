@@ -29,5 +29,17 @@ pipeline {
                 archiveArtifacts artifacts: '*.deb', fingerprint: true
             }
         }
+
+        stage('Docker: Build Image') {
+            steps {
+                sh 'docker build -t pingrequest'
+            }
+        }
+
+        stage('Docker: Run Container') {
+            steps {
+                sh 'docker run --rm pingrequest'
+            }
+        }
     }
 }
