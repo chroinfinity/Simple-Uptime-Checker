@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PACKAGE_NAME = "pingrequest"
-        VERSION = "1.0.1"
+        VERSION = "1.0.2"
         ARTIFACT_NAME = "${env.PACKAGE_NAME}-${env.VERSION}-${env.BUILD_NUMBER}.deb"
     }
 
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                     fpm -s dir -t deb \
-                      -n pingrequest \
+                      -n $ARTIFACT_NAME \
                       -v $VERSION \
                       utility.py=/usr/local/bin/pingrequest
                 '''
